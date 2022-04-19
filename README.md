@@ -14,5 +14,11 @@ Demo Link: https://drive.google.com/file/d/1RICHAoy9HtHCvJOoIWHCRZOmGiSlVa9S/vie
 Project 3:
 In this project, I implemned a COAP server for sending distance data and led data to COAP client. Here I learnd about GET, PUT, POST, and Observe & Notify methods of COAP using Zephyr.
 
+Resources
+sensor/get : To get data from sensor
+led_i/get : Get the status of led(i) (i can be R or G or B)
+led_i/put : Set the pin of led(i) (i can be R or G or B)
+sensor/observe: Observe the data of the sensor
+
 Project 4:
 <TODO>
