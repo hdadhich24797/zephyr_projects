@@ -1,0 +1,36 @@
+diff --git a/drivers/display/CMakeLists.txt b/drivers/display/CMakeLists.txt
+index c41f05eac4..d8e732d391 100644
+--- a/drivers/display/CMakeLists.txt
++++ b/drivers/display/CMakeLists.txt
+@@ -9,6 +9,7 @@ zephyr_sources_ifdef(CONFIG_DUMMY_DISPLAY	display_dummy.c)
+ zephyr_sources_ifdef(CONFIG_FRAMEBUF_DISPLAY	display_framebuf.c)
+ zephyr_sources_ifdef(CONFIG_ST7789V		display_st7789v.c)
+ zephyr_sources_ifdef(CONFIG_ST7735R		display_st7735r.c)
++zephyr_sources_ifdef(CONFIG_MAX7219		display_max7219.c)
+ zephyr_sources_ifdef(CONFIG_GD7965		gd7965.c)
+ zephyr_sources_ifdef(CONFIG_LS0XX		ls0xx.c)
+ 
+diff --git a/drivers/display/Kconfig b/drivers/display/Kconfig
+index c15b315d97..8bd1410b8b 100644
+--- a/drivers/display/Kconfig
++++ b/drivers/display/Kconfig
+@@ -22,6 +22,7 @@ source "drivers/display/Kconfig.sdl"
+ source "drivers/display/Kconfig.ssd1306"
+ source "drivers/display/Kconfig.ssd16xx"
+ source "drivers/display/Kconfig.st7735r"
++source "drivers/display/Kconfig.max7219"
+ source "drivers/display/Kconfig.st7789v"
+ source "drivers/display/Kconfig.gd7965"
+ source "drivers/display/Kconfig.dummy"
+diff --git a/drivers/display/display_st7735r.c b/drivers/display/display_st7735r.c
+index 4c9730182a..ac416b9cff 100644
+--- a/drivers/display/display_st7735r.c
++++ b/drivers/display/display_st7735r.c
+@@ -8,7 +8,6 @@
+  *
+  * SPDX-License-Identifier: Apache-2.0
+  */
+-
+ #define DT_DRV_COMPAT sitronix_st7735r
+ 
+ #include "display_st7735r.h"
